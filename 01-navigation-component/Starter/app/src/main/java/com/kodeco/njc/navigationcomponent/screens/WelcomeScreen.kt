@@ -70,7 +70,7 @@ fun WelcomeScreen(
 
         Button(
             modifier = modifier.fillMaxWidth(),
-            onClick = { }
+            onClick = onStartClick
         ) {
             Text(text = "START")
         }
