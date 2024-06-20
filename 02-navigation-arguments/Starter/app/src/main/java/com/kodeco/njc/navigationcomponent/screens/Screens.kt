@@ -39,3 +39,5 @@ enum class Screens(val route: String) {
     MOVIE_SELECTION_SCREEN("movie-selection"),
     TICKET_SELECTION_SCREEN("ticket-selection"/* Append parameter to route */),
 }
+
+const val MOVIE_NAME_ARG = "movieName"
