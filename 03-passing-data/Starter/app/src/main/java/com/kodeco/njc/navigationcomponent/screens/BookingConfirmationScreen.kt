@@ -56,6 +56,7 @@ fun BookingConfirmationScreen(
     movieName: String,
     ticketCount: Int
 ) {
+    val context = LocalContext.current
     Column(
         modifier = modifier
             .fillMaxSize()
