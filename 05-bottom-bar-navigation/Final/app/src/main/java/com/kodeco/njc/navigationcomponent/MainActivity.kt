@@ -85,7 +85,6 @@ class MainActivity : ComponentActivity() {
                             selected = selectedNavBarIndex == 0,
                             label = { Text(text = "Home") },
                             onClick = {
-                                selectedNavBarIndex = 0
                                 navController.navigate(WELCOME_SCREEN.route)
                             },
                             icon = {
@@ -100,7 +99,6 @@ class MainActivity : ComponentActivity() {
                             selected = selectedNavBarIndex == 1,
                             label = { Text(text = "Book Movie") },
                             onClick = {
-                                selectedNavBarIndex = 1
                                 navController.navigate(MOVIE_SELECTION_SCREEN.route)
                             },
                             icon = {
@@ -120,6 +118,7 @@ class MainActivity : ComponentActivity() {
                 ) {
 
                     composable(WELCOME_SCREEN.route) {
+                        selectedNavBarIndex = 0
                         WelcomeScreen(onStartClick = { navController.navigate(MOVIE_SELECTION_SCREEN.route) })
                     }
                     composable(
@@ -129,6 +128,8 @@ class MainActivity : ComponentActivity() {
                             action = Intent.ACTION_VIEW
                         })
                     ) { backStackEntry ->
+                        selectedNavBarIndex = 1
+
                         MovieSelectionScreen(
                             onNextClick = { movieName ->
                                 navController.navigate(
