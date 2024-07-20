@@ -73,7 +73,7 @@ class MainActivity : ComponentActivity() {
                 }
                 composable(
                     TICKET_SELECTION_SCREEN.route,
-                    arguments = listOf(navArgument("movieName") { type = NavType.StringType })
+                    arguments = listOf(navArgument(MOVIE_NAME_ARG) { type = NavType.StringType })
                 ) { backStackEntry ->
                     TicketSelectionScreen(
                         movieName = requireNotNull(
